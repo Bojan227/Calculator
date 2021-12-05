@@ -3,28 +3,56 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    
+  }
+  .container{
+    border: 2px solid black;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #f5f0e1;
   }
   .grid{
     display: grid;
-    width: 600px;
-    height: 500px;
+    height: 250px;
+    width: 350px;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     gap: 4px;
   }
   .header{
-    border: 2px solid green;
+    border: 2px solid #1e3d59;
+    border-radius: 10px;
     padding: 15px;
     margin-bottom: 5px;
-    height: 80px;
+    color: #1e3d59;
+    font-size: 19px;
+    height: 60px;
+    
   }
 .display{
   display: flex;
   gap: 8px;
   justify-content: flex-end;
-    align-items: center;
+  align-items: center;
+  
 }
 .middle{
   display: flex;
-  
+  gap: 5px;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+button{
+  border-radius: 10px;
+  outline: none;
+  border: 2px solid #ff6e40;
+  font-size: 18px;
+  padding: 6px 13px;
+}
+button:hover{
+  background-color: #ffc13b;
+  transform: scale(1.1);
+  border-color: #ffc600;
+  box-shadow: 0 0 1rem #ffc600;
 }
