@@ -4,12 +4,9 @@ const equalsButton = document.querySelector('.equ');
 const firstNumber = document.querySelector('.first')
 const operatorDisplay = document.querySelector('.operator')
 const secondNumber = document.querySelector('.second')
-const total = document.querySelector('.total')
 const clearButton = document.querySelector('.clear')
 const dotButton = document.querySelector('.dot')
 const backspaceButton = document.querySelector('.backspace')
-
-
 
 let num_1 = ''
 let operation = ''
@@ -71,16 +68,16 @@ function clearDisplay(){
 function backSpace(){
   if(num_2 !== '' && operation === ''){
     num_2 = num_2.slice(0, -1)
-  secondNumber.innerText = num_2
+    secondNumber.innerText = num_2
   }else if(operation !== '' && num_2 === '' || num_1 === ''){
     operation = operation.slice(0, -1)
     operatorDisplay.innerText = operation
   }else if(num_1 !== '' && operation === ''){
     num_1 = num_1.toString().slice(0, -1)
-  firstNumber.innerText = num_1
+    firstNumber.innerText = num_1
   }else if(num_1 !== '' && operation !== '' && num_2 !== ''){
-  num_2 = num_2.toString().slice(0, -1)
-  secondNumber.innerText = num_2
+    num_2 = num_2.toString().slice(0, -1)
+    secondNumber.innerText = num_2
   }
 }
 
@@ -133,7 +130,7 @@ equalsButton.addEventListener('click', ()=>{
     return firstNumber.innerText = `You cant do that! Please click clear!`
   }
 
-  calculate()
+    calculate()
 })
 
 clearButton.addEventListener('click', clearDisplay)
@@ -145,13 +142,11 @@ window.addEventListener('keydown', (e)=>{
   const backspace = document.querySelector('.backspace').value
   const clear = document.querySelector('.clear').value
   const dotKey = document.querySelector('.dot').value
- 
 
   if(e.key === '.'){
     if(num_1 !== '' && operation === ''){
       firstNumber.innerText = ''
       num_1 = ''
-      
     }
     if(!num_2.includes('.')){
       num_2 += e.key
@@ -161,21 +156,17 @@ window.addEventListener('keydown', (e)=>{
       num_2 += dotKey
       secondNumber.innerText = num_2
       dotButton.disabled = true
-     }
-     
-
-    
+     }    
   } else if(!Number.isNaN(parseFloat(e.key))){
     if(num_1 !== '' && operation === ''){
       firstNumber.innerText = ''
       num_1 = ''
-      
     }
-    
     num_2 += e.key
     console.log(num_2)
     secondNumber.innerText = num_2
     console.log(num_2)
+    
   } else if(e.key === '/'|| e.key === '+' || e.key === '-' || e.key === '*'){
     dotButton.disabled = false
     operation = e.key
@@ -209,7 +200,7 @@ window.addEventListener('keydown', (e)=>{
         return firstNumber.innerText = `You cant do that! Please click clear!`
   }
   
-  calculate()
+      calculate()
 
   }else if(backspace === e.key){
     backSpace()
