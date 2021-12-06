@@ -142,7 +142,8 @@ window.addEventListener('keydown', (e)=>{
   const backspace = document.querySelector('.backspace').value
   const clear = document.querySelector('.clear').value
   const dotKey = document.querySelector('.dot').value
-
+  const enter = 'Enter'
+   
   if(e.key === '.'){
     if(num_1 !== '' && operation === ''){
       firstNumber.innerText = ''
@@ -189,7 +190,7 @@ window.addEventListener('keydown', (e)=>{
       operatorDisplay.innerText = operation
       secondNumber.innerText = ''
     }
-    }else if(equals === e.key){
+    }else if(equals === e.key || enter === e.key){
       
       if(num_1 === '' || num_2 === '' || operation === ''){return}
       if(num_2 === '0' && operation === '/'){
